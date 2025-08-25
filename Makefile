@@ -1,4 +1,4 @@
-.PHONY: all configure build exercises exercise-5 exercise-6 exercise-7
+.PHONY: all configure build exercises exercise-3 exercise-4 exercise-6 exercise-7 playground
 
 all: exercises playground
 
@@ -8,9 +8,13 @@ configure:
 build: configure
 	cmake --build build --target all --parallel=$(shell nproc)
 
-exercise-5: build
-	@echo "---------- EXERCISE 5 ----------"
-	@./build/exercise-5
+exercise-3: build
+	@echo "---------- EXERCISE 3 ----------"
+	@./build/exercise-3
+
+exercise-4: build
+	@echo "---------- EXERCISE 4 ----------"
+	@./build/exercise-4
 
 exercise-6: build
 	@echo "---------- EXERCISE 6 ----------"
@@ -26,4 +30,4 @@ playground: ./build/playground
 	@echo "---------- PLAYGROUND ----------"
 	@./build/playground
 
-exercises: exercise-5 exercise-6 exercise-7
+exercises: exercise-3 exercise-4 exercise-6 exercise-7
